@@ -1,0 +1,176 @@
+{
+	"testNPCEncounter0": {
+		"requirements": {
+			"min_NPC02_Reputation": 20,
+			"max_NPC02_Reputation": 100,
+			"requiredStoryFlags": ["metAtPark"],
+			"blockedByFlags": ["confessionHappened"]
+		},
+		"dialogue": [
+			{
+				"id": "start",
+				"characterLine": "Oh, hey! I didn't expect to see you here. Did you come for the festival?",
+				"responses": [
+					{
+						"text": "Yeah! I heard it’s amazing.",
+						"effect": {
+							"reputationChange": {
+								"town_status": 5,
+								"NPC02": 10
+							}
+						},
+						"next": "talk_about_festival"
+					},
+					{
+						"text": "Not really, just passing by.",
+						"effect": {
+							"reputationChange": {
+								"town_status": 0,
+								"NPC02": -5
+							}
+						},
+						"next": "awkward"
+					},
+					{
+						"text": "Fuck off",
+						"effect": {
+							"reputationChange": {
+								"town_status": -10,
+								"NPC02": -15
+							},
+							"setFlags": ["toldThemToFuckOff"]
+						},
+						"next": "negative_reply"
+					}
+				]
+			},
+			{
+				"id": "talk_about_festival",
+				"characterLine": "Its amazing! The food stalls are my favorite. Have you tried the kebab yet?",
+				"responses": [
+					{
+						"text": "Not yet, want to grab some together?",
+						"effect": {
+							"startQuest": "fetchKebabQuest",
+							"reputationChange": {
+								"town_status": 5,
+								"NPC02": 10
+							}
+						},
+						"next": "accept_invite"
+					},
+					{
+						"text": "I’m allergic to kebabs, sadly.",
+						"effect": {
+							"reputationChange": {
+								"town_status": 0,
+								"NPC02": 0
+							}
+						},
+						"next": "sympathy"
+					}
+				]
+			},
+			{
+				"id": "awkward",
+				"characterLine": "Oh… well, it's still nice to see you. Do you want to hang out for a bit?",
+				"responses": [
+					{
+						"text": "Sure, I'd love that.",
+						"effect": {
+							"reputationChange": {
+								"town_status": 3,
+								"NPC02": 5
+							}
+						},
+						"next": "accept_invite"
+					},
+					{
+						"text": "Maybe another time.",
+						"effect": {
+							"reputationChange": {
+								"town_status": 0,
+								"NPC02": -5
+							}
+						},
+						"next": "rejected"
+					}
+				]
+			},
+			{
+				"id": "negative_reply",
+				"characterLine": "No you fuck off",
+				"responses": [
+					{
+						"text": "I mean it. You’re a prick.",
+						"effect": {
+							"reputationChange": {
+								"town_status": -15,
+								"NPC02": -20
+							},
+							"setFlags": ["deepHatredFormed"]
+						},
+						"next": "deep_hatred"
+					},
+					{
+						"text": "Haha, just messing!",
+						"effect": {
+							"reputationChange": {
+								"town_status": -2,
+								"NPC02": 2
+							}
+						},
+						"next": "playful"
+					}
+				]
+			},
+			{
+				"id": "accept_invite",
+				"characterLine": "Awesome! Let’s go check out the stalls together. This is going to be fun!",
+				"responses": []
+			},
+			{
+				"id": "sympathy",
+				"characterLine": "Oh no, that’s too bad. We’ll find something else then!",
+				"responses": [
+					{
+						"text": "Sounds good, lead the way!",
+						"effect": {
+							"reputationChange": {
+								"town_status": 3,
+								"NPC02": 5
+							}
+						},
+						"next": "accept_invite"
+					}
+				]
+			},
+			{
+				"id": "rejected",
+				"characterLine": "Oh... okay. Maybe next time.",
+				"responses": []
+			},
+			{
+				"id": "deep_hatred",
+				"characterLine": "Your so sound.",
+				"responses": []
+			},
+			{
+				"id": "playful",
+				"characterLine": "Haha, you’re such a prick! But I’ll take it.",
+				"responses": [
+					{
+						"text": "Let’s grab some pints!",
+						"effect": {
+							"reputationChange": {
+								"town_status": 5,
+								"NPC02": 10
+							}
+						},
+						"next": "accept_invite"
+					}
+				]
+			}
+		]
+	}
+}

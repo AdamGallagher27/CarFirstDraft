@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://df1hk4vh2yh5u"]
+
+[ext_resource type="Script" uid="uid://beomy4b04bfys" path="res://MainScenes/Maps/MapMenu.gd" id="1_2dvpu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a2142"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a2142"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2dvpu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rn0mc"]
+
+[node name="MapMenu" type="Panel"]
+tooltip_text = "MAP"
+script = ExtResource("1_2dvpu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+texture = SubResource("CanvasTexture_a2142")
+
+[node name="Location1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 164.0
+offset_right = 460.0
+offset_bottom = 246.0
+mouse_filter = 0
+texture = SubResource("PlaceholderTexture2D_a2142")
+
+[node name="Location2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 272.0
+offset_right = 774.0
+offset_bottom = 407.0
+mouse_filter = 0
+texture = SubResource("PlaceholderTexture2D_2dvpu")
+
+[node name="Location3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 445.0
+offset_right = 463.0
+offset_bottom = 485.0
+mouse_filter = 0
+texture = SubResource("PlaceholderTexture2D_rn0mc")
+
+[connection signal="gui_input" from="Location1" to="." method="_on_location_1_gui_input"]
+[connection signal="gui_input" from="Location2" to="." method="_on_location_2_gui_input"]
+[connection signal="gui_input" from="Location3" to="." method="_on_location_3_gui_input"]

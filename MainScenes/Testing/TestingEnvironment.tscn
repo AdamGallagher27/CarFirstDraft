@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://8jnit6newyvg"]
+
+[ext_resource type="PackedScene" uid="uid://c6gba3tmuwtey" path="res://MainScenes/Player/Player.tscn" id="1_rux1r"]
+[ext_resource type="Script" uid="uid://cwd73rvs53ea6" path="res://MainScenes/Testing/HandleTimeChangeLight.gd" id="2_86mau"]
+[ext_resource type="PackedScene" uid="uid://k71ccykng6ta" path="res://MainScenes/NPCs/TestNPC.tscn" id="2_s7ejw"]
+[ext_resource type="PackedScene" uid="uid://df1hk4vh2yh5u" path="res://MainScenes/Maps/Map.tscn" id="3_irn0k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxq8s"]
+albedo_color = Color(0.0682088, 0.961937, 0.0579516, 1)
+
+[node name="TestingEnvironment" type="Node3D"]
+
+[node name="Terrain" type="Node" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0801392, -0.359534, -2.7485)
+material_override = SubResource("StandardMaterial3D_kxq8s")
+use_collision = true
+size = Vector3(5.41516, 0.0654297, 2.86316)
+
+[node name="Building1" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.923168, -0.196585, -3.36747)
+use_collision = true
+size = Vector3(0.741932, 0.241211, 0.322086)
+
+[node name="Building2" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.737798, -0.225769, -1.93495)
+use_collision = true
+size = Vector3(0.785194, 0.187622, 0.174721)
+
+[node name="Building3" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710544, -0.143362, -2.54147)
+use_collision = true
+size = Vector3(0.253967, 0.347656, 0.396793)
+
+[node name="Player" parent="." node_paths=PackedStringArray("map_menu") instance=ExtResource("1_rux1r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.648088, -0.293068, -1.79878)
+map_menu = NodePath("../MapMenu")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(-4.37114e-08, 0.642788, -0.766044, 0, 0.766044, 0.642788, 1, 2.80971e-08, -3.34849e-08, -0.207646, 0.250434, -0.0139225)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38763, 0)
+script = ExtResource("2_86mau")
+
+[node name="TestNPC" parent="." instance=ExtResource("2_s7ejw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183941, -0.308436, -2.57915)
+
+[node name="MapMenu" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_irn0k")]
+player = NodePath("../Player")

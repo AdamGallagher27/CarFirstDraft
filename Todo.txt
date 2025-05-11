@@ -1,0 +1,10 @@
+
+
+WHen the user gets a main dialouge option send them to a new scene with the main dial id
+this id will match an object in a json file which will contain the converstaion information
+
+Make a locations json with names and a vector 3 for location of whole map make specific to charachters and fast travel locations
+
+Expand encounter with pc reactions and requirments in dialog objects
+
+json files are treated as static assets so when a new game is started clone the starting json data from res:// and write it to user:// this means it can be mutated 

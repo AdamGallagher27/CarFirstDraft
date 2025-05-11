@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://k71ccykng6ta"]
+
+[ext_resource type="Script" uid="uid://d38cdeplxem56" path="res://MainScenes/NPCs/NPCController.gd" id="1_pxk0h"]
+[ext_resource type="Texture2D" uid="uid://bh8k6eq51jf4t" path="res://MainScenes/Player/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png" id="2_0aouj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1i87x"]
+
+[sub_resource type="GDScript" id="GDScript_pxk0h"]
+script/source = "extends Area3D
+
+# Called when any object enters the area
+func _on_area_entered(body: Node3D) -> void:
+	print(\"Collision detected with: \", body.name)
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_str55"]
+
+[node name="TestNPC" type="CharacterBody3D"]
+script = ExtResource("1_pxk0h")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+modulate = Color(0.636438, 0.294925, 0.136463, 1)
+billboard = 1
+texture = ExtResource("2_0aouj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.000312209, -0.00085178, 0.000156581)
+shape = SubResource("BoxShape3D_1i87x")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = SubResource("GDScript_pxk0h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_str55")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

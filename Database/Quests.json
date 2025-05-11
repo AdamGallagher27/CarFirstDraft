@@ -1,0 +1,20 @@
+{
+	"fetchKebabQuest": {
+		"title": "GetKebab",
+		"description": "Grab a kebab for your date",
+		"hasBegun": false,
+		"isComplete": false,
+		"startDate": "1_MORNING",
+		"completeBy": "3_MIDDAY",
+		"requirements": {
+			"requiredFlags": ["metAtPark"]
+		},
+		"reward": {
+			"reputationChange": {
+				"town_status": 3,
+				"NPC02": 5
+			},
+			"unlockEvent": "specialDinner"
+		}
+	}
+}
