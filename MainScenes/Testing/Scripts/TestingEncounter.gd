@@ -1,5 +1,15 @@
-{
-	"testNPCEncounter0": {
+extends Node2D
+
+var encounter: Dictionary
+
+# enstantiate with start
+var current_node_id = "start"
+
+# not bother writing the read code ATM so im mocking the response
+# more features will need to be added to this strucutre including charachter name saying each line (Enables interuption by ADW)
+# also individual requirements for charachter lines (these will need fall backs / really good testing)
+func get_encounter_json() -> Dictionary: 
+	return {
 		"requirements": {
 			"min_reputation": 20,
 			"max_reputation": 100,
@@ -173,4 +183,63 @@
 			}
 		]
 	}
-}
+
+# also not bothered writing this JSON script 
+# (in future will read this and check requirments probably better to do this in the overworld scene before instantiating this scene)
+func check_requirments(encounter) -> bool: 
+	return true
+	
+func _on_response_pressed(response_data: Dictionary) -> void:
+	if response_data.has("effect"):
+#		Write JSON utility 
+		print("apply effect function")
+	
+	if response_data.has("next"):
+		show_dialogue_node(response_data["next"])
+	else:
+		print("End of conversation.")
+
+	
+func get_node_data(node_id: String) -> Dictionary:
+	if not encounter.has("dialogue"):
+		return {}
+
+	var dialogue_array = encounter["dialogue"]
+	for node in dialogue_array:
+		if node.get("id", "") == node_id:
+			return node
+
+	print("Warning: Node with ID '%s' not found." % node_id)
+	return {}
+
+
+func show_dialogue_node(node_id: String):
+	var node = get_node_data(node_id)
+	
+	
+	if not node.has("characterLine"):
+		return {}
+	
+#	name has to be added to json which enables multiple people to be in encounter
+	var npc_name = $DialogueUI/DialogueBox/CharachterName
+	npc_name = "NPC_NAME_FILLER"
+	
+	var charachter_line = $DialogueUI/DialogueBox/CharacterLine
+	charachter_line.text = node["characterLine"]
+	var responses = node.get("responses", [])
+	
+	var container = $DialogueUI/DialogueBox/ResponsesContainer
+	for child in container.get_children():
+		child.queue_free()
+	
+	for response_option in responses:
+		var btn = Button.new()
+		btn.text = response_option["text"]
+		btn.connect("pressed", Callable(self, "_on_response_pressed").bind(response_option))
+		container.add_child(btn)
+
+
+func _ready() -> void:
+	encounter = get_encounter_json()
+	if encounter && check_requirments(encounter):
+		show_dialogue_node('start')

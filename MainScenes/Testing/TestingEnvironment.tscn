@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://8jnit6newyvg"]
 
 [ext_resource type="PackedScene" uid="uid://c6gba3tmuwtey" path="res://MainScenes/Player/Player.tscn" id="1_rux1r"]
-[ext_resource type="Script" uid="uid://cwd73rvs53ea6" path="res://MainScenes/Testing/HandleTimeChangeLight.gd" id="2_86mau"]
+[ext_resource type="Script" uid="uid://cwd73rvs53ea6" path="res://MainScenes/Testing/Scripts/HandleTimeChangeLight.gd" id="2_86mau"]
 [ext_resource type="PackedScene" uid="uid://k71ccykng6ta" path="res://MainScenes/NPCs/TestNPC.tscn" id="2_s7ejw"]
 [ext_resource type="PackedScene" uid="uid://df1hk4vh2yh5u" path="res://MainScenes/Maps/Map.tscn" id="3_irn0k"]
 

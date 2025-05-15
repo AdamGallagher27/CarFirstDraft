@@ -36,7 +36,6 @@ func _physics_process(delta):
 		#ReputationHandler.change_reputation("town_status", 10)
 	
 	if Input.is_action_just_pressed("open_map"):
-		print(map_menu.visible)
 		if map_menu.visible:
 			map_menu.hide()
 		else:

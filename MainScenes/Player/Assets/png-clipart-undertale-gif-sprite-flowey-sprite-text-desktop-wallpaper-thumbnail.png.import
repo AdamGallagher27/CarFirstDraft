@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh8k6eq51jf4t"
-path.s3tc="res://.godot/imported/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png-d25ed59742b621b18629e7bcf29f5d90.s3tc.ctex"
+path.s3tc="res://.godot/imported/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png-664148b22950ed94f855b46d9c4d9181.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://MainScenes/Player/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png"
-dest_files=["res://.godot/imported/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png-d25ed59742b621b18629e7bcf29f5d90.s3tc.ctex"]
+source_file="res://MainScenes/Player/Assets/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png"
+dest_files=["res://.godot/imported/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png-664148b22950ed94f855b46d9c4d9181.s3tc.ctex"]
 
 [params]
 

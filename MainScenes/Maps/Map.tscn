@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://df1hk4vh2yh5u"]
 
-[ext_resource type="Script" uid="uid://beomy4b04bfys" path="res://MainScenes/Maps/MapMenu.gd" id="1_2dvpu"]
+[ext_resource type="Script" uid="uid://beomy4b04bfys" path="res://MainScenes/Maps/Scripts/MapMenu.gd" id="1_2dvpu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_a2142"]
 

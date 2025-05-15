@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dli64jthth684"]
+
+[ext_resource type="Script" uid="uid://bfom3tt6d8xce" path="res://MainScenes/Testing/Scripts/TestingEncounter.gd" id="1_1sqcd"]
+
+[node name="TestingEncounter" type="Node2D"]
+script = ExtResource("1_1sqcd")
+
+[node name="DialogueUI" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="DialogueUI"]
+offset_right = 1148.0
+offset_bottom = 645.0
+
+[node name="CharachterName" type="Label" parent="DialogueUI/DialogueBox"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 347.0
+offset_right = 49.0
+offset_bottom = 370.0
+
+[node name="CharacterLine" type="RichTextLabel" parent="DialogueUI/DialogueBox"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 348.0
+offset_right = 1113.0
+offset_bottom = 465.0
+text = "TEXT"
+
+[node name="ResponsesContainer" type="VBoxContainer" parent="DialogueUI/DialogueBox"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 533.0
+offset_right = 1137.0
+offset_bottom = 638.0
+
+[node name="ResponseButton1" type="Button" parent="DialogueUI/DialogueBox/ResponsesContainer"]
+layout_mode = 2
+text = "Response option 1"
+
+[node name="ResponseButton2" type="Button" parent="DialogueUI/DialogueBox/ResponsesContainer"]
+layout_mode = 2
+text = "Response option 2"
+
+[node name="ResponseButton3" type="Button" parent="DialogueUI/DialogueBox/ResponsesContainer"]
+layout_mode = 2
+text = "Response option 3"

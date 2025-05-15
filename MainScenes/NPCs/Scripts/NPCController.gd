@@ -66,7 +66,7 @@ const GROUND_LEVEL: float = -0.309
 		"small": "Whats the story bud?"  # Main dialogue
 	},
 	"second_encounter": {
-		"main": "00",  # Small dialogue
+		"main": "testNPCEncounter0",  # Small dialogue
 	},
 	"third_encounter": {
 		"main": "01"  # Main dialogue

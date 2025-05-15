@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6gba3tmuwtey"]
 
-[ext_resource type="Script" uid="uid://d7n38wsd2eni" path="res://MainScenes/Player/PlayerController.gd" id="1_4wldt"]
-[ext_resource type="Texture2D" uid="uid://bh8k6eq51jf4t" path="res://MainScenes/Player/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png" id="2_1i87x"]
+[ext_resource type="Script" uid="uid://d7n38wsd2eni" path="res://MainScenes/Player/Scripts/PlayerController.gd" id="1_4wldt"]
+[ext_resource type="Texture2D" uid="uid://bh8k6eq51jf4t" path="res://MainScenes/Player/Assets/png-clipart-undertale-gif-sprite-flowey-sprite-text-desktop-wallpaper-thumbnail.png" id="2_1i87x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1i87x"]
 
