@@ -13,10 +13,11 @@ offset_bottom = 645.0
 
 [node name="CharachterName" type="Label" parent="DialogueUI/DialogueBox"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 347.0
-offset_right = 49.0
-offset_bottom = 370.0
+offset_left = 65.0
+offset_top = 323.0
+offset_right = 105.0
+offset_bottom = 346.0
+scale = Vector2(0.92, 1)
 
 [node name="CharacterLine" type="RichTextLabel" parent="DialogueUI/DialogueBox"]
 layout_mode = 0

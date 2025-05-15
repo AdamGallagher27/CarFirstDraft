@@ -216,13 +216,12 @@ func get_node_data(node_id: String) -> Dictionary:
 func show_dialogue_node(node_id: String):
 	var node = get_node_data(node_id)
 	
-	
 	if not node.has("characterLine"):
 		return {}
 	
 #	name has to be added to json which enables multiple people to be in encounter
 	var npc_name = $DialogueUI/DialogueBox/CharachterName
-	npc_name = "NPC_NAME_FILLER"
+	npc_name.text = "NPC_NAME_FILLER"
 	
 	var charachter_line = $DialogueUI/DialogueBox/CharacterLine
 	charachter_line.text = node["characterLine"]
